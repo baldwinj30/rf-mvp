@@ -12,6 +12,8 @@ import pandas as pd
 import time
 
 stat_type = "totals" # advanced, totals
+year_type = "is_as=Y" # award=mvp, is_as=Y
+name = "allstar" # mvp, allstar
     
 base = ("https://www.basketball-reference.com/play-index/psl_finder.cgi?"
         "request=1&match=single&type=" + stat_type + "&per_minute_base=36&per_poss_base="
@@ -19,7 +21,7 @@ base = ("https://www.basketball-reference.com/play-index/psl_finder.cgi?"
         "season_start=1&season_end=-1&age_min=0&age_max=99&shoot_hand=&"
         "height_min=0&height_max=99&birth_country_is=Y&birth_country=&"
         "birth_state=&college_id=&draft_year=&is_active=&debut_yr_nba_start=&"
-        "debut_yr_nba_end=&is_hof=&is_as=Y&as_comp=gt&as_val=0&award=&"
+        "debut_yr_nba_end=&is_hof=&" + year_type + "&as_comp=gt&as_val=0&award=&"
         "pos_is_g=Y&pos_is_gf=Y&pos_is_f=Y&pos_is_fg=Y&pos_is_fc=Y&"
         "pos_is_c=Y&pos_is_cf=Y&qual=&c1stat=&c1comp=&c1val=&c2stat=&c2comp=&"
         "c2val=&c3stat=&c3comp=&c3val=&c4stat=&c4comp=&c4val=&c5stat=&"
@@ -56,4 +58,4 @@ while status:
 
 df = pd.concat(df_list, ignore_index=True)
 print(df)
-df.to_pickle("all_star_" + stat_type + "_df.pkl")
+df.to_pickle("data/" + name + "_" +  stat_type + "_df.pkl")

@@ -153,7 +153,6 @@ dependencies:
   - wheel=0.33.4=py37_0
   - widgetsnbextension=3.4.2=py37_0
   - wrapt=1.11.1=py37h7b6447c_0
-  - wurlitzer=1.0.2=py37_1000
   - xz=5.2.4=h14c3975_4
   - yapf=0.27.0=py_0
   - zeromq=4.3.1=he6710b0_3
